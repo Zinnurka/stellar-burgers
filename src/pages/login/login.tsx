@@ -15,7 +15,7 @@ export const Login: FC = () => {
     dispatch(loginUserAsyncThunk({ email, password }))
       .unwrap()
       .then(() => {
-        navigate('/profile');
+        navigate('/');
       })
       .catch((error) => {
         alert(error.message);
