@@ -3,7 +3,6 @@ import { LoginUI } from '@ui-pages';
 import { useDispatch } from '../../services/store';
 import { loginUserAsyncThunk } from '../../services/burgerUserSlice';
 import { useNavigate } from 'react-router-dom';
-import { Modal } from '@components';
 
 export const Login: FC = () => {
   const [email, setEmail] = useState('');
