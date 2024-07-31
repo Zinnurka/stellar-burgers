@@ -9,7 +9,7 @@ export const Register: FC = () => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const userError = useSelector((state) => state.user.loginUserErr);
+  const userError = useSelector((state) => state.userReducer.loginUserErr);
   const dispatcher = useDispatch();
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();

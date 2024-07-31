@@ -9,11 +9,11 @@ import {
   TLoginData,
   TRegisterData,
   updateUserApi
-} from '../utils/burger-api';
+} from '@api';
 import { RootState } from './store';
 import { deleteCookie, setCookie } from '../utils/cookie';
 
-export type TUserState = {
+type TUserState = {
   updateUserReq: boolean;
   updateUserErr: null | string;
   data: TUser | null;
@@ -97,7 +97,7 @@ export const getUserAsyncThunk = createAsyncThunk(
 );
 
 export const selectIsAuthenticated = (state: RootState) =>
-  state.user.isAuthenticated;
+  state.userReducer.isAuthenticated;
 
 export const burgerUserSlice = createSlice({
   name: 'burgerUser',

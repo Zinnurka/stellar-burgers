@@ -52,11 +52,7 @@ const burgerConstructorSlice = createSlice({
       const previousIndex = index - 1;
       state.ingredients[index] = state.ingredients[previousIndex];
       state.ingredients[previousIndex] = itemToMove;
-    },
-    clearConstructorIngredients: () => ({
-      bun: null,
-      ingredients: []
-    })
+    }
   }
 });
 
@@ -64,7 +60,6 @@ export const {
   addIngredient,
   removeIngredient,
   moveIngredientUp,
-  moveIngredientDown,
-  clearConstructorIngredients
+  moveIngredientDown
 } = burgerConstructorSlice.actions;
 export default burgerConstructorSlice.reducer;

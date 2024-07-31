@@ -6,7 +6,7 @@ import { Preloader } from '@ui';
 
 export const ProfileOrders: FC = () => {
   const dispatcher = useDispatch();
-  const orders = useSelector((state) => state.user.userOrders);
+  const orders = useSelector((state) => state.userReducer.userOrders);
 
   useEffect(() => {
     dispatcher(getUserOrdersThunk());
