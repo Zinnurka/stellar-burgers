@@ -12,6 +12,11 @@ describe('Тест оформления заказа', () => {
     window.localStorage.setItem('refreshToken', JSON.stringify(refreshToken));
   });
   it('Оформление заказа', () => {
+    cy.get('[data-cy="bun-top"]').should('contain', 'Выберите булки');
+    cy.get('[data-cy="select-ingredient"]').should(
+      'contain',
+      'Выберите начинку'
+    );
     cy.get('[data-cy=ingredient-1').within(() => {
       cy.get('button').click();
     });

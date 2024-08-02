@@ -6,6 +6,7 @@ describe('Тест выбора ингридиентов', () => {
     cy.visit(testUrl);
   });
   it('Добавление ингридиента в конструктор', () => {
+    cy.get('[data-cy="bun-ingredient-2"]').should('not.exist');
     cy.get('[data-cy=ingredient-2').within(() => {
       cy.get('button').click();
     });
@@ -16,6 +17,7 @@ describe('Тест выбора ингридиентов', () => {
       });
   });
   it('Открытие модального окна и закрытие через кнопку', () => {
+    cy.get('[data-cy="modal"]').should('not.exist');
     cy.get('[data-cy=ingredient-2').click();
     cy.get('[data-cy="modal"]')
       .should('exist')
@@ -26,6 +28,7 @@ describe('Тест выбора ингридиентов', () => {
     cy.get('[data-cy="modal"]').should('not.exist');
   });
   it('Открытие модального окна и закрытие через оверлей', () => {
+    cy.get('[data-cy="modal"]').should('not.exist');
     cy.get('[data-cy=ingredient-2').click();
     cy.get('[data-cy="modal"]').should('exist');
     cy.get('[data-cy="modalOverlay"]').click('top', { force: true });
