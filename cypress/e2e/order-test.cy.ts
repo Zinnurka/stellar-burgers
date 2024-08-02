@@ -11,6 +11,10 @@ describe('Тест оформления заказа', () => {
     cy.setCookie('accessToken', accessToken);
     window.localStorage.setItem('refreshToken', JSON.stringify(refreshToken));
   });
+  afterEach(() => {
+    window.localStorage.clear();
+    cy.clearCookies();
+  });
   it('Оформление заказа', () => {
     cy.get('[data-cy="bun-top"]').should('contain', 'Выберите булки');
     cy.get('[data-cy="select-ingredient"]').should(
