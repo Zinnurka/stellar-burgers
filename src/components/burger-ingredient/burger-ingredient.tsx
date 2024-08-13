@@ -7,7 +7,7 @@ import { BurgerIngredientUI } from '@ui';
 import { useDispatch } from '../../services/store';
 
 export const BurgerIngredient: FC<TBurgerIngredientProps> = memo(
-  ({ ingredient, count }) => {
+  ({ ingredient, count, 'data-cy': dataCy }) => {
     const location = useLocation();
     const dispatcher = useDispatch();
 
